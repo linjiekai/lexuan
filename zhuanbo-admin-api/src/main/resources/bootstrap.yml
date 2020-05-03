@@ -8,17 +8,14 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: 127.0.0.1:15100
-#        ip: 47.112.241.96
-#        server-addr: 47.112.241.96:15100
-#        namespace: 0b9b0579-4b43-4422-9c05-4bb0ef5d7f87
+        server-addr: 15100.lexuanj.buxiabai.cn:80
+        namespace: fa5e0567-f384-48b7-82c1-f487fc4d6662
       config:
-        #server-addr: 127.0.0.1:15100 #自己起配置中心则打开着
-        server-addr: 47.112.241.96:15100
+        server-addr: 15100.lexuanj.buxiabai.cn:80
+        namespace: fa5e0567-f384-48b7-82c1-f487fc4d6662
         group: ZHUANBO_ADMIN
         encode: UTF-8
         file-extension: yml
-        namespace: 0b9b0579-4b43-4422-9c05-4bb0ef5d7f87 #自己有配置中心则换成你的ID
         ext-config[0]:
           data-id: zhuanbo-admin-api.yml
           group: ZHUANBO_ADMIN
@@ -39,10 +36,7 @@ spring:
           data-id: zhuanbo-admin-push.yml
           group: ZHUANBO_ADMIN
           refresh: true
-        ext-config[5]:
-          data-id: zhuanbo-admin-storage.yml
-          group: ZHUANBO_ADMIN
-          refresh: true
+
 
 
   main:

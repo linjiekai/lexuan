@@ -6,20 +6,28 @@ server:
     max-threads: 500
     min-spare-threads: 50
     uri-encoding: UTF-8
-    
+
+
 spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://172.24.142.2:3306/lexuan?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    # 推荐utf8mb4编码以便支持表情字符，sys_log记录系统数据变动需要支持utf8mb4
+    connectionInitSqls: SET NAMES utf8mb4;
+    username: root
+    password: 1qaz3edc
   application:
     name: zhuanbo-shop-api
   cloud:
     nacos:
       discovery:
-        server-addr: 127.0.0.1:8848
-        namespace: 70987604-4376-4d75-83a1-b5b6036deec3
-        #server-addr: 47.112.241.96:15100
-        #namespace: 0b9b0579-4b43-4422-9c05-4bb0ef5d7f87
+        server-addr: 15100.lexuanj.buxiabai.cn:80
+        namespace: fa5e0567-f384-48b7-82c1-f487fc4d6662
+
       config:
-        server-addr: 127.0.0.1:8848
-        namespace: 70987604-4376-4d75-83a1-b5b6036deec3 #自己有配置中心则换成你的ID
+        server-addr: 15100.lexuanj.buxiabai.cn:80
+        namespace: fa5e0567-f384-48b7-82c1-f487fc4d6662 #自己有配置中心则换成你的ID
         group: ZHUANBO_SHOP
         file-extension: yml
         encode: UTF-8
@@ -47,14 +55,8 @@ spring:
           data-id: zhuanbo-shop-push.yml
           group: ZHUANBO_SHOP
           refresh: true
-        ext-config[6]:
-          data-id: zhuanbo-shop-sms.yml
-          group: ZHUANBO_SHOP
-          refresh: true
-        ext-config[7]:
-          data-id: zhuanbo-shop-storage.yml
-          group: ZHUANBO_SHOP
-          refresh: true
+
+
 
   http:
     encoding:
