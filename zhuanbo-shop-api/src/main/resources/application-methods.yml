@@ -1,0 +1,97 @@
+MobileAdController:
+  list: "position,platform"
+
+MobileDynamicController:
+  detail: "id"
+  commentList: "dynamicId"
+  commentCreate: "dynamicId,content,[commentId]"
+  commentDetail: "id"
+  commentDelete: "id"
+  like: "id,like"
+
+MobileAddressController:
+  create: "[id],name,provinceId,cityId,areaId,address,mobile,isDefault"
+  delete: "id"
+  detail: "id"
+  setDefaultAddress: "id,isDefault"
+
+MobileGoodsController:
+  detail: "id"
+  list: "[showCategoryId],[brandId]"
+
+MobileCartController:
+  add: "productId,number,[mercId],[platform]"
+  onceAdd: "productId,number,[mercId],[platform]"
+  index: "[mercId],[platform]"
+
+MobileAuthController:
+  code: "mobile,type,areaCode"
+  codeCheck: "mobile,code"
+  register: "mobile,code,[inviteCode]"
+  login: "mobile,type,[platform],[password]"
+  loginWX: "code,source,[encryptedData],[iv]"
+  wxBind: "tokenId,mobile,code,sureBind"
+  wxLoginOrRegister: "[mobile],[code]"
+  code2openid: "code,source"
+
+MobileOrderController:
+  submit: "addressId,sysCnl,clientIp,[mercId],[platform],[buyType],[orderChannel]"
+  list: "[status]"
+  cancel: "orderNo"
+  repay: "orderNo"
+  detail: "orderNo"
+  shipTrace: "orderNo"
+  orderFinish: "orderNo"
+  delete: "orderNo"
+
+MobileUserController:
+  updateInfo: "nickname"
+  setPs: "mobile,password"
+  bindWx: "code"
+  realName: "name|cardType|cardNo|[imgFront]|[imgBack]|realSource|sysCnl"
+  realNameRepair: "imgFront|imgBack|realSource|sysCnl"
+  agreementSign: "signImgUrl"
+
+MobileFeedbackController:
+  create: "content,[platform]"
+
+MobileShareController:
+  list: "url"
+
+MobileAppVersionController:
+  check: "sysCnl,platform"
+
+
+MobileCommonQuestionController:
+  list: "position"
+
+
+MobileMsgController:
+  list: "[sysCnl],[platform]"
+
+MobileExcProductController:
+  manageList: "channel"
+  manageRePublish: "id"
+
+MobileProductController:
+  excPublish: "channel,platform"
+
+MobileWithdrController:
+  bind: "[code],bankCode,tradeType,[bankCardType],sysCnl,clientIp,[imgFront],[imgBack]"
+  unbind: "[agrNo],[bankCode],[bankCardType],clientIp"
+  apply: "price,[agrNo],[bankCode],[bankCardType],tradeType,sysCnl,clientIp"
+
+# admin-api
+CategoryController:
+  create: "pid,name,level,indexs,status,adminId,operator,deleted"
+  update: "id,pid,name,level,indexs,status,adminId,operator,deleted"
+
+ShowCateoryController:
+  create: "pid,name,level,indexs,status,adminId,operator,deleted"
+  update: "id,pid,name,level,indexs,status,adminId,operator,deleted"
+
+MobileBrandDeposit:
+  submit: "busiType,clientIp,[sysCnl]"
+
+MobileDepositController:
+  submit: "busiType,tradeCode,orderType"

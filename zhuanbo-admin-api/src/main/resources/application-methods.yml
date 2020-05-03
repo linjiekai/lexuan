@@ -1,0 +1,21 @@
+# admin-api
+CategoryController:
+  create: "pid,name,level,indexs,status,adminId,operator,deleted"
+  update: "id,pid,name,level,indexs,status,adminId,operator,deleted"
+
+ShowCateoryController:
+  create: "pid,name,level,indexs,status,adminId,operator,deleted"
+  update: "id,pid,name,level,indexs,status,adminId,operator,deleted"
+
+UpgradeDetailsController:
+  list: "[userId],[mobile]"
+  create: "userId,price,refundFlag"
+  update: "userId,price,refundFlag,id"
+
+SupplierController:
+  create: "name,orderConnectType"
+  update: "id,[name],[code],orderConnectType,[operator]"
+OrderController:
+  editRemark: "orderNo,remark"
+WithdrOrderController:
+  audit: "orderNo,orderStatus"

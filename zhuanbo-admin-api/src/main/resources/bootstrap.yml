@@ -1,0 +1,71 @@
+#设置自己启动的端口 如下都是默认配置
+server:
+  port: 15120
+
+spring:
+  application:
+    name: zhuanbo-admin-api
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:15100
+#        ip: 47.112.241.96
+#        server-addr: 47.112.241.96:15100
+#        namespace: 0b9b0579-4b43-4422-9c05-4bb0ef5d7f87
+      config:
+        #server-addr: 127.0.0.1:15100 #自己起配置中心则打开着
+        server-addr: 47.112.241.96:15100
+        group: ZHUANBO_ADMIN
+        encode: UTF-8
+        file-extension: yml
+        namespace: 0b9b0579-4b43-4422-9c05-4bb0ef5d7f87 #自己有配置中心则换成你的ID
+        ext-config[0]:
+          data-id: zhuanbo-admin-api.yml
+          group: ZHUANBO_ADMIN
+          refresh: true
+        ext-config[1]:
+          data-id: zhuanbo-admin-db.yml
+          group: ZHUANBO_ADMIN
+          refresh: true
+        ext-config[2]:
+          data-id: zhuanbo-admin-mq.yml
+          group: ZHUANBO_ADMIN
+          refresh: true
+        ext-config[3]:
+          data-id: zhuanbo-admin-cache.yml
+          group: ZHUANBO_ADMIN
+          refresh: true
+        ext-config[4]:
+          data-id: zhuanbo-admin-push.yml
+          group: ZHUANBO_ADMIN
+          refresh: true
+        ext-config[5]:
+          data-id: zhuanbo-admin-storage.yml
+          group: ZHUANBO_ADMIN
+          refresh: true
+
+
+  main:
+    allow-bean-definition-overriding: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+
+logging:
+  level:
+    com.zhuanbo.service.mapper: debug
+
+feign:
+  client:
+    config:
+      default:           #服务名，填写default为所有服务
+        connectTimeout: 60000
+        readTimeout: 60000
+ribbon:
+  ReadTimeout: 3000
+  ConnectTimeout: 3000

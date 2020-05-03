@@ -1,0 +1,255 @@
+# 整数: ^-?\\d+$
+# 正整数（包含0）：^[0-9]\\d*$
+# 普通文本,非空格开头：^\\S.*
+# 普通文本限制：.{1,2}+
+# 限制类型：a|b|c
+
+MobileAdController:
+  list:
+    position: "1|2|3|4|5|6"
+    platform: "MPMALL|MPWJMALL|ZBMALL"
+
+MobileDynamicController:
+  detail:
+    id: "^[0-9]\\d*$"
+  commentList:
+    dynamicId: "^[0-9]\\d*$"
+  commentCreate:
+    dynamicId: "^[0-9]\\d*$"
+    content: "^\\S.*"
+    commentId: "^[0-9]\\d*$"
+  commentDetail:
+    id: "^[0-9]\\d*$"
+  commentDelete:
+    id: "^[0-9]\\d*$"
+  like:
+    id: "^[0-9]\\d*$"
+    like: "0|1"
+
+MobileAddressController:
+  create:
+    id: "^[0-9]\\d*$"
+    name: ".{1,15}+"
+    provinceId: "^[0-9]\\d*$"
+    cityId: "^[0-9]\\d*$"
+    areaId: "^[0-9]\\d*$"
+    address: "^\\S.*"
+    mobile: "^[0-9]\\d*$"
+    isDefault: "0|1"
+  delete:
+    id: "^[0-9]\\d*$"
+  detail:
+    id: "^[0-9]\\d*$"
+  setDefaultAddress:
+    id: "^[0-9]\\d*$"
+    isDefault: "0|1"
+
+MobileGoodsController:
+  detail:
+    id: "^[0-9]\\d*$"
+  list:
+    showCategoryId: "^[0-9]\\d*$"
+    brandId: "^[0-9]\\d*$"
+
+MobileCartController:
+  add:
+    productId: "^[0-9]\\d*$"
+    number: "-?\\d+$"
+    mercId: "^\\S.*"
+    platform: "MPMALL|PTMALL|ZBMALL"
+  onceAdd:
+    productId: "^[0-9]\\d*$"
+    number: "^[1-9]\\d*$"
+    mercId: "^\\S.*"
+    platform: "MPMALL|PTMALL|ZBMALL"
+  index:
+    mercId: "^\\S.*"
+    platform: "MPMALL|PTMALL|ZBMALL"
+
+MobileAuthController:
+  code:
+    mobile: "^[0-9]\\d*$"
+    type: "1|2|3|5|6|7"
+    areaCode: "^[0-9]\\d*$"
+    password: "^\\S.*"
+  codeCheck:
+    mobile: "^[0-9]\\d*$"
+    code: "^[0-9]\\d*$"
+  register:
+    mobile: "^[0-9]\\d*$"
+    code: "^[0-9]\\d*$"
+    inviteCode: "^\\S.*"
+  login:
+    mobile: "^[0-9]\\d*$"
+    type: "2|4"
+    platform: "MPMALL|PTMALL|ZBMALL"
+  loginWX:
+    code: "^\\S.*"
+    source: "wx|mp|h5"
+    encryptedData: "^\\S.*"
+    iv: "^\\S.*"
+  wxBind:
+    tokenId: "^\\S.*"
+    mobile: "^[0-9]\\d*$"
+    code: "^[0-9]\\d*$"
+    sureBind: "0|1"
+  code2openid:
+    code: "^\\S.*"
+    source: "gzh|0|mp"
+  wxLoginOrRegister:
+    mobile: "^[0-9]\\d*$"
+    code: "^\\S.*"
+
+MobileOrderController:
+  submit:
+    addressId: "^[0-9]\\d*$"
+    sysCnl: "IOS|ANDROID|WX-APPLET|WX-PUBLIC|H5"
+    clientIp: "^\\S.*"
+    mercId: "^\\S.*"
+    platform: "MPMALL|PTMALL|ZBMALL"
+    buyType: "0|1"
+    orderChannel: "MPMALL|GIVEMPMALL|PTMALL|GIVEPTMALL|OUTMALL"
+  list:
+    status: "W|S|C|WS|WD"
+  cancel:
+    orderNo: "^\\S.*"
+  repay:
+    orderNo: "^\\S.*"
+  detail:
+    orderNo: "^\\S.*"
+  shipTrace:
+    orderNo: "^\\S.*"
+  orderFinish:
+    orderNo: "^\\S.*"
+  delete:
+    orderNo: "^\\S.*"
+
+MobileUserController:
+  updateInfo:
+    nickname: ".{1,16}+"
+  setPs:
+    mobile: "^[0-9]\\d*$"
+    password: "^\\S.*"
+  bindWx:
+    code: "^\\S.*"
+  realName:
+    cardType: "0|1"
+    cardNo: "^\\S.*"
+    imgFront: "^\\S.*"
+    imgBack: "^\\S.*"
+    realSource: "0|1|2"
+    sysCnl: "IOS|ANDROID|H5|WX-APPLET"
+  agreementSign:
+    signImgUrl: "\\S.*"
+
+MobileFeedbackController:
+  create:
+    content: "[\\s\\S]+"
+    platform: "MPMALL|PTMALL|ZBMALL"
+
+MobileShareController:
+  list:
+    url: "^\\S.*"
+
+MobileAppVersionController:
+  check:
+    sysCnl: "IOS|ANDROID"
+    platform: "MPMALL|PTMALL|MPWJMALL|ZBMALL"
+
+MobileCommonQuestionController:
+  list:
+    position: "index|out|freeCat"
+
+MobileMsgController:
+  list:
+    sysCnl: "\\d+$"
+    platform: "MPMALL|PTMALL|ZBMALL"
+
+MobileExcProductController:
+  manageList:
+    channel: "0|1"
+  manageRePublish:
+    id: "^[0-9]\\d*$"
+
+MobileProductController:
+  excPublish:
+    channel: "0|1"
+    platform: "MPMALL|PTMALL|ZBMALL"
+
+MobileWithdrController:
+  bind:
+    code: "^\\S.*"
+    bankCode: "^\\S.*"
+    bankCardType: "01|02|08"
+    clientIp: "^\\S.*"
+  unbind:
+    bankCardNo: "^\\S.*"
+    bankCode: "^\\S.*"
+    clientIp: "^\\S.*"
+  apply:
+    price: "^(([1-9]{1}\\d*)|([0]{1}))(\\.(\\d){0,2})?$"
+    bankCode: "^\\S.*"
+    bankCardNo: "^\\S.*"
+    sysCnl: "IOS|ANDROID|WX-APPLET|WX-PUBLIC"
+    clientIp: "^\\S.*"
+
+MobileShowCategoryController:
+  index:
+    pid: "^[0-9]\\d*$"
+  list:
+    id: "^[0-9]\\d*$"
+    type: "^[0-9]\\d*$"
+
+# admin-api
+CategoryController:
+  create:
+    pid: "^[0-9]\\d*$"
+    name: ".{0,10}+"
+    level: "1|2|3"
+    indexs: "^[0-9]\\d*$"
+    status: "1|2"
+    adminId: "^[0-9]\\d*$"
+    operator: "^\\S.*"
+    deleted: "0|1"
+  update:
+    id: "^[0-9]\\d*$"
+    pid: ".{0,10}+"
+    name: ".{0,10}+"
+    level: "1|2|3"
+    indexs: "^[0-9]\\d*$"
+    status: "1|2"
+    adminId: "^[0-9]\\d*$"
+    operator: "^\\S.*"
+    deleted: "0|1"
+ShowCateoryController:
+  create:
+    pid: "^[0-9]\\d*$"
+    name: ".{0,10}+"
+    level: "1|2|3"
+    indexs: "^[0-9]\\d*$"
+    status: "1|2"
+    adminId: "^[0-9]\\d*$"
+    operator: "^\\S.*"
+    deleted: "0|1"
+  update:
+    id: "^[0-9]\\d*$"
+    pid: "^[0-9]\\d*$"
+    name: ".{0,10}+"
+    level: "1|2|3"
+    indexs: "^[0-9]\\d*$"
+    status: "1|2"
+    adminId: "^[0-9]\\d*$"
+    operator: "^\\S.*"
+    deleted: "0|1"
+
+MobileBrandDeposit:
+  submit:
+    busiType: "05"
+    clientIp: "^\\S.*"
+    sysCnl: "IOS|ANDROID|WEB|WX-APPLET|WX-PUBLIC"
+
+MobileDepositController:
+  submit:
+    busiType: "05|06|08"
+    tradeCode: "02|01"
+    orderType: "1|2|3|4|5"

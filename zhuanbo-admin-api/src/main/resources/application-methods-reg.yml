@@ -1,0 +1,57 @@
+# admin-api
+CategoryController:
+  create:
+    pid: "^[0-9]\\d*$"
+    name: ".{0,10}+"
+    level: "1|2|3"
+    indexs: "^[0-9]\\d*$"
+    status: "1|2"
+    adminId: "^[0-9]\\d*$"
+    operator: "^\\S.*"
+    deleted: "0|1"
+  update:
+    id: "^[0-9]\\d*$"
+    pid: ".{0,10}+"
+    name: ".{0,10}+"
+    level: "1|2|3"
+    indexs: "^[0-9]\\d*$"
+    status: "1|2"
+    adminId: "^[0-9]\\d*$"
+    operator: "^\\S.*"
+    deleted: "0|1"
+ShowCateoryController:
+  create:
+    pid: "^[0-9]\\d*$"
+    name: ".{0,10}+"
+    level: "1|2|3"
+    indexs: "^[0-9]\\d*$"
+    status: "1|2"
+    adminId: "^[0-9]\\d*$"
+    operator: "^\\S.*"
+    deleted: "0|1"
+  update:
+    id: "^[0-9]\\d*$"
+    pid: "^[0-9]\\d*$"
+    name: ".{0,10}+"
+    level: "1|2|3"
+    indexs: "^[0-9]\\d*$"
+    status: "1|2"
+    adminId: "^[0-9]\\d*$"
+    operator: "^\\S.*"
+    deleted: "0|1"
+SupplierController:
+  create:
+    name: ".*"
+    orderConnectType: "0|1"
+  update:
+    id: "^[0-9]\\d*$"
+    orderConnectType: "0|1"
+OrderController:
+  editRemark:
+    orderNo: "^[0-9]\\d*$"
+    remark: ".{0,512}"
+WithdrOrderController:
+  audit:
+    orderNo: "^[0-9]\\d*$"
+    orderStatus: "W|R"
+
